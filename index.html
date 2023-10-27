@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>EasyApp - Premium Digital Business Cards</title>
+</head>
+
+<body>
+    <!-- <div class="iframe-outer-wrapper"> -->
+    <!-- <div class="iframe-wrapper"> -->
+    <iframe src="https://ginkgotools.wixsite.com/website"></iframe>
+    <!-- </div> -->
+    <!-- </div> -->
+</body>
+<script>
+    function updateWidth() {
+        let iframe = document.getElementsByTagName('iframe')[0]
+        if (window.innerWidth > 320 && window.innerWidth < 600) {
+            let scale = window.innerWidth / 320
+            let marginTop = Math.round(38 * scale + 1)
+            iframe.style.scale = scale
+            iframe.style.height = `calc(100vh + ${marginTop}px)`
+            iframe.style.marginTop = `${marginTop * -1}px`
+        } else {
+            iframe.style.scale = 1
+        }
+    }
+
+    updateWidth()
+
+    window.addEventListener('resize', updateWidth)
+
+</script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    iframe {
+        width: 320px;
+        transform-origin: 0 0;
+        border: none;
+    }
+
+    @media (min-width: 700px) {
+        iframe {
+            margin-top: -50px;
+            height: calc(100vh + 50px);
+            width: 100%;
+        }
+    }
+</style>
+
+</html>
